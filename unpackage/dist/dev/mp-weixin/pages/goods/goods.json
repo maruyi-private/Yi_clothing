@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "量身定制",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "goods-list": "/components/goods-list/goods-list"
+  }
+}

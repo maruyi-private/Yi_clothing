@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "易服饰",
+  "usingComponents": {
+    "goods-list": "/components/goods-list/goods-list"
+  }
+}
