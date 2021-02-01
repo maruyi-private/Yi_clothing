@@ -1,6 +1,8 @@
 <template>
 	<view class="news">
 		<news-item @itemClick="goDetail()" :news="news"></news-item>
+		<news-item></news-item>
+		<news-item></news-item>
 	</view>
 </template>
 
