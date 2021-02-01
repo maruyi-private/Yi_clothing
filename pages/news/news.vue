@@ -1,7 +1,6 @@
 <template>
 	<view class="news">
 		<news-item @itemClick="goDetail()" :news="news"></news-item>
-		<view></view>
 	</view>
 </template>
 
