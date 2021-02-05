@@ -1,7 +1,7 @@
 <template>
 	<view class="home">
 		<swiper autoplay indicator-dots circular>
-			<swiper-item v-for="item in swipers" :key="item.id">
+			<swiper-item v-for="item in swipers" :key="item.index">
 				<image :src="item.img"></image>
 			</swiper-item>
 		</swiper>
@@ -59,16 +59,22 @@
 		methods: {
 			// 获取轮播图
 			async getSwipers() {
-				const res = await this.$myRequest({
-					url: "/api/getlunbo"
-				});
-				this.swipers = res.data.message;
+				// const res = await this.$myRequest({
+				// 	url: "/api/getlunbo"
+				// });
+				uniCloud.callFunction({
+					name: 'getLunboImg',
+					data: {}
+				}).then(res => {
+					this.swipers = res.result.data
+				})
 			},
 			async getHotGoods() {
-				const res = await this.$myRequest({
-					url: "/api/getgoods?pageindex=1"
-				});
-				this.goods = res.data.message;
+				// const res = await this.$myRequest({
+				// 	url: "/api/getgoods?pageindex=1"
+				// });
+				// this.goods = res.data.message;
+				this.goods = [];
 			},
 			navItemClick(url) {
 				uni.navigateTo({

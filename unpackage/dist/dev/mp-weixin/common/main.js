@@ -14,6 +14,8 @@ var _api = __webpack_require__(/*! ./util/api.js */ 11);function _interopRequire
 // 将封装的请求接口的方法挂载到全局
 _vue.default.prototype.$myRequest = _api.myRequest;
 
+// 问资源获取url
+_vue.default.prototype.$baseUrl = _api.baseUrl;
 
 _vue.default.config.productionTip = false;
 
