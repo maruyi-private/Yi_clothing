@@ -4,8 +4,19 @@ const db = uniCloud.database()
 const collection = db.collection('TY_CLOTHES')
 
 exports.main = async (event, context) => {
+	
+	const res = await collection.get();
+	
+	return res;
+	
 	//event为客户端上传的参数
-	console.log('event : ', event)
+	// console.log('event : ', event)
+	
+	// const res = await collection.doc('601d1701c9e7be0001cc2e98').update({
+	// 	stype: 'sweater'
+	// })
+	
+	// console.log("uodate", res);
 	
 	// const res = await collection.add([{
 	// 	"id": 0,
@@ -30,8 +41,8 @@ exports.main = async (event, context) => {
 	// 	}
 	// }])
 	
-	console.log('res1', res);
+	// console.log('res1', res);
 	
 	//返回数据给客户端
-	return event
+	// return event
 };

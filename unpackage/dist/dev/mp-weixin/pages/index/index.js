@@ -187,27 +187,22 @@ __webpack_require__.r(__webpack_exports__);
   components: { "goods-list": goodsList },
   data: function data() {
     return {
-      navs: [
-      {
+      navs: [{
         icon: "iconfont icon-ziyuan",
         title: "量身定制",
         path: "/pages/goods/goods" },
-
-      {
-        icon: "iconfont icon-guanyuwomen",
-        title: "联系我们",
-        path: "/pages/contact/contact" },
-
       {
         icon: "iconfont icon-tupian",
-        title: "社区图片",
+        title: "信息完善",
         path: "/pages/pics/pics" },
-
       {
         icon: "iconfont icon-shipin",
         title: "学习视频",
-        path: "/pages/videos/videos" }],
-
+        path: "/pages/videos/videos" },
+      {
+        icon: "iconfont icon-guanyuwomen",
+        title: "联系我们",
+        path: "/pages/contact/contact" }],
 
       swipers: [],
       goods: [] };
@@ -231,12 +226,19 @@ __webpack_require__.r(__webpack_exports__);
                 });case 1:case "end":return _context.stop();}}}, _callee);}))();
     },
     getHotGoods: function getHotGoods() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
+                uniCloud.callFunction({
+                  name: 'getClothesList',
+                  data: {} }).
+                then(function (res) {
+                  _this2.goods = res.result.data;
+                  console.log('res2', res);
+                });
                 // const res = await this.$myRequest({
                 // 	url: "/api/getgoods?pageindex=1"
                 // });
                 // this.goods = res.data.message;
-                _this2.goods = [];case 1:case "end":return _context2.stop();}}}, _callee2);}))();
-    },
+                // this.goods = [];
+              case 1:case "end":return _context2.stop();}}}, _callee2);}))();},
     navItemClick: function navItemClick(url) {
       uni.navigateTo({
         url: url });

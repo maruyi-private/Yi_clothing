@@ -26,28 +26,23 @@
 		components: {"goods-list": goodsList},
 		data() {
 			return {
-				navs: [
-					{
-						icon: "iconfont icon-ziyuan",
-						title: "量身定制",
-						path: "/pages/goods/goods"
-					},
-					{
-						icon: "iconfont icon-guanyuwomen",
-						title: "联系我们",
-						path: "/pages/contact/contact"
-					},
-					{
-						icon: "iconfont icon-tupian",
-						title: "社区图片",
-						path: "/pages/pics/pics"
-					},
-					{
-						icon: "iconfont icon-shipin",
-						title: "学习视频",
-						path: "/pages/videos/videos"
-					}
-				],
+				navs: [{
+					icon: "iconfont icon-ziyuan",
+					title: "量身定制",
+					path: "/pages/goods/goods"
+				},{
+					icon: "iconfont icon-tupian",
+					title: "信息完善",
+					path: "/pages/pics/pics"
+				},{
+					icon: "iconfont icon-shipin",
+					title: "学习视频",
+					path: "/pages/videos/videos"
+				},{
+					icon: "iconfont icon-guanyuwomen",
+					title: "联系我们",
+					path: "/pages/contact/contact"
+				}],
 				swipers: [],
 				goods: []
 			}
@@ -70,11 +65,18 @@
 				})
 			},
 			async getHotGoods() {
+				uniCloud.callFunction({
+					name: 'getClothesList',
+					data: {}
+				}).then(res => {
+					this.goods = res.result.data
+					console.log('res2', res);
+				})
 				// const res = await this.$myRequest({
 				// 	url: "/api/getgoods?pageindex=1"
 				// });
 				// this.goods = res.data.message;
-				this.goods = [];
+				// this.goods = [];
 			},
 			navItemClick(url) {
 				uni.navigateTo({

@@ -21,10 +21,15 @@
 		},
 		methods: {
 			async getGoodsList(callBack) {
-				const res = await this.$myRequest({
-					url: "/api/getgoods?pageindex=" + this.pageindex
-				});
-				this.goods = [...this.goods, ...res.data.message];
+				const res = await uniCloud.callFunction({
+					name: 'getClothesList',
+					data: {}
+				})
+				this.goods = [...this.goods, ...res.result.data]
+				// const res = await this.$myRequest({
+				// 	url: "/api/getgoods?pageindex=" + this.pageindex
+				// });
+				// this.goods = [...this.goods, ...res.data.message];
 				callBack && callBack();
 			}
 		},

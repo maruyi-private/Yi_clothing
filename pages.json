@@ -105,7 +105,7 @@
 				"selectedIconPath": "static/icon/cart-active.png"
 			},
 			{
-				"text": "咨询",
+				"text": "我的",
 				"pagePath": "pages/member/member",
 				"iconPath": "static/icon/member.png",
 				"selectedIconPath": "static/icon/member-active.png"
