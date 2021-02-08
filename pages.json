@@ -5,14 +5,12 @@
 			"style": {
 				"navigationBarTitleText": "易服饰"
 			}
-		},
-		{
+		},{
 			"path": "pages/cart/cart",
 			"style": {
 				"navigationBarTitleText": "购物车"
 			}
-		},
-		{
+		},{
             "path" : "pages/member/member",
             "style" :                                                                                    
             {
@@ -20,8 +18,7 @@
                 "enablePullDownRefresh": false
             }
             
-        },
-		{
+        },{
             "path" : "pages/news/news",
             "style" :                                                                                    
             {
@@ -29,8 +26,7 @@
                 "enablePullDownRefresh": false
             }
             
-        },
-		{
+        },{
             "path" : "pages/goods/goods",
             "style" :                                                                                    
             {
@@ -38,8 +34,7 @@
 				"enablePullDownRefresh": true
             }
             
-        },
-		{
+        },{
             "path" : "pages/contact/contact",
             "style" :                                                                                    
             {
@@ -47,8 +42,7 @@
                 "enablePullDownRefresh": false
             }
             
-        },
-		{
+        },{
             "path" : "pages/pics/pics",
             "style" :                                                                                    
             {
@@ -56,8 +50,7 @@
                 "enablePullDownRefresh": false
             }
             
-        },
-		{
+        },{
             "path" : "pages/videos/videos",
             "style" :                                                                                    
             {
@@ -65,15 +58,13 @@
                 "enablePullDownRefresh": false
             }
             
-        },
-		{
+        },{
 		    "path" : "pages/news-detail/news-detail",
 		    "style" :                                                                                    
 		    {
 		        "navigationBarTitleText": "detail",
 		        "enablePullDownRefresh": false
 		    }
-		    
 		}
     ],
 	"globalStyle": {
