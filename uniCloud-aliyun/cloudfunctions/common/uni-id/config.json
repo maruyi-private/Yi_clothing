@@ -1,0 +1,53 @@
+{
+	"passwordSecret": "jZ3gK5aR4pO3rJ2pZ1jO7zX6zY8wM0zM6uM0fZ0vS9lC3zB1aM4mT8eL3pV5hR5v",
+	"tokenSecret": "dL8dM7hZ3iG7sV1cE2uK8mL0uR4jG2uG3dW8mN7yN7iI2tF8rK3hP3iP8lP0zE3l",
+	"tokenExpiresIn": 7200,
+	"tokenExpiresThreshold": 600,
+	"passwordErrorLimit": 5,
+	"bindTokenToDevice": true,
+	"passwordErrorRetryTime": 3600,
+	"autoSetInviteCode": false,
+	"forceInviteCode": false,
+	"removePermissionAndRoleFromToken": false,
+	"app-plus": {
+		"tokenExpiresIn": 2592000,
+		"oauth" : {
+			"weixin" : {
+				"appid" : "weixin appid",
+				"appsecret" : "weixin appsecret"
+			},
+			"apple":	{
+				"bundleId": "your APP bundleId"
+			}
+		}
+	},
+	"mp-weixin": {
+		"oauth" : {
+			"weixin" : {
+				"appid" : "wx259fd38059e65344",
+				"appsecret" : "17d4f19141b9371c89303395c9d9fbc3"
+			}
+		}
+	},
+	"mp-alipay": {
+		"oauth" : {
+			"alipay" : {
+				"appid" : "alipay appid",
+				"privateKey" : "alipay privateKey"
+			}
+		}
+	},
+	"service": {
+		"sms": {
+			"name": "DCloud",
+			"codeExpiresIn": 300,
+			"smsKey": "your sms key",
+			"smsSecret": "your sms secret"
+		},
+		"univerify": {
+			"appid":"your appid",
+			"apiKey": "your apiKey",
+			"apiSecret": "your apiSecret"
+		}
+	}
+}

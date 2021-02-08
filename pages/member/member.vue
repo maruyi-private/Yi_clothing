@@ -1,22 +1,15 @@
 <template>
-	<view>
-		会员
+	<view class="member">
+		login
 	</view>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				
-			}
-		},
-		methods: {
-			
-		}
+	onLoad() {
+		this.$login
 	}
 </script>
 
-<style>
+<style lang="scss">
 
 </style>

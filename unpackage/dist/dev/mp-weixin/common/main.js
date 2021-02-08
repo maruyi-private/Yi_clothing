@@ -17,6 +17,8 @@ _vue.default.prototype.$myRequest = _api.myRequest;
 // 问资源获取url
 _vue.default.prototype.$baseUrl = _api.baseUrl;
 
+_vue.default.prototype.$login = _api.loginByWeixin;
+
 _vue.default.config.productionTip = false;
 
 _App.default.mpType = 'app';
