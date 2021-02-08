@@ -10,7 +10,7 @@ exports.main = async (event) => {
 	let params = event.params || {}
 	let payload = {}
 	let noCheckAction = ['register', 'checkToken', 'encryptPwd', 'login', 'loginByWeixin', 'sendSmsCode',
-		'setVerifyCode', 'loginBySms', 'loginByEmail', 'code2SessionWeixin', 'code2SessionAlipay'
+		'setVerifyCode', 'loginBySms', 'loginByEmail', 'code2SessionWeixin', 'code2SessionAlipay', 'logout'
 	]
 	if (noCheckAction.indexOf(event.action) === -1) {
 		if (!event.uniIdToken) {
@@ -61,8 +61,14 @@ exports.main = async (event) => {
 				break;
 			}
 		case 'logout':
-			res = await uniID.logout(event.uniIdToken);
-			break;
+			{
+				const {
+					code
+				} = params
+				res = await uniID.logout(code);
+				console.log('res1', res);
+				break;
+			}
 		case 'updatePwd':
 			{
 				const {

@@ -1,1 +1,1 @@
-<view class="member">login</view>
+<view class="member"><button data-event-opts="{{[['tap',[['onclickLogin']]]]}}" bindtap="__e">登录</button></view>

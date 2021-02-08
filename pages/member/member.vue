@@ -1,12 +1,21 @@
 <template>
 	<view class="member">
-		login
+		<button @click="onclickLogin()">登录</button>
 	</view>
 </template>
 
 <script>
-	onLoad() {
-		this.$login
+	export default {
+		methods: {
+			async onclickLogin() {
+				const res = await this.$login();
+				console.log('res', res);
+				console.log('success');
+			}
+		},
+		onLoad() {
+			
+		}
 	}
 </script>
 
