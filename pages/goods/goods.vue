@@ -23,7 +23,7 @@
 			async getGoodsList(callBack) {
 				const res = await uniCloud.callFunction({
 					name: 'getClothesList',
-					data: {}
+					data: {pageindex: this.pageindex}
 				})
 				this.goods = [...this.goods, ...res.result.data]
 				// const res = await this.$myRequest({

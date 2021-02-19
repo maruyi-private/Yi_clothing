@@ -8,7 +8,8 @@
     "pages/contact/contact",
     "pages/pics/pics",
     "pages/videos/videos",
-    "pages/news-detail/news-detail"
+    "pages/news-detail/news-detail",
+    "pages/login/login"
   ],
   "subPackages": [],
   "window": {
