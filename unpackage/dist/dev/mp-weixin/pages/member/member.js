@@ -185,10 +185,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
     return {
+      userInfo: {},
       defaultImg: '/static/logo.png',
       status: [
       {
@@ -242,8 +250,18 @@ var _default =
       ownerInfo: '' };
 
   },
+  watch: {
+    userInfo: function userInfo(val) {
+      console.log(val, "监听方法");
+      this.setUserInfo();
+    } },
+
   onShow: function onShow() {
     // this.getData();
+    this.setUserInfo();
+  },
+  onLoad: function onLoad() {
+    this.setUserInfo();
   },
   methods: {
     getData: function getData() {
@@ -257,6 +275,8 @@ var _default =
           if (res.confirm) {
             setTimeout(function () {
               _this.$store.commit('logout');
+              uni.clearStorage();
+              _this.userInfo = {};
               // this.$Router.replaceAll({name:'login'})
             }, 100);
           }
@@ -274,22 +294,12 @@ var _default =
       uni.navigateTo({
         url: '../login/login' });
 
+    },
+    setUserInfo: function setUserInfo() {
+      this.userInfo = uni.getStorageSync('uid');
     } },
 
   computed: {
-    userInfo: function userInfo() {
-      var userInfo = {};
-      uni.setStorage({
-        'userInfo': 'mry' });
-
-      try {
-        userInfo = uni.getStorageSync('userInfo');
-        return userInfo;
-      } catch (e) {
-        // error
-      }
-      return userInfo;
-    },
     myHouse: function myHouse() {
       return this.$store.state.myHouse;
     },

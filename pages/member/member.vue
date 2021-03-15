@@ -3,30 +3,37 @@
 		<view class="center_top" style="background-image: url('/static/img/main-banner.jpg');"><view class="mask"></view></view>
 		<view class="center_box_bg">
 			<view class="profily">
-				<view class="base" v-if="hasBoundHouse === true && hasLogin === true">
-					<view class="profily_header" v-if="!userInfo" :style="'background-image: url(' + defaultImg+')'"></view>
-					<view class="profily_header" v-if="userInfo" :style="'background-image: url(' + userInfo.avatarUrl + ')'"></view>
+				<!-- <view class="base" v-if="hasBoundHouse === true && hasLogin === true"> -->
+				<view class="base" v-if="userInfo">
+					<view class="profily_header" :style="'background-image: url(' + defaultImg+')'"></view>
+					<!-- <view class="profily_header" v-if="userInfo" :style="'background-image: url(' + userInfo.avatarUrl + ')'"></view> -->
 					<view>
-						<view>
-							<text>{{ myHouse.ownerInfo.realname }}</text>
+						<!-- <view>
+							<text>{{ userInfo }}</text>
 						</view>
 						<view>
-							<text>{{ myHouse.ownerInfo.villageaddr }}-{{ myHouse.ownerInfo.villagename }}</text>
-						</view>
+							<text>{{ userInfo }}-{{ userInfo }}</text>
+						</view> -->
 						<view>
-							<text class="room-number">ID号: {{ myHouse.ownerInfo.roomnum }}</text>
+							<text class="room-number">ID号: {{ userInfo }}</text>
 						</view>
 					</view>
 					<image @click="logout" src="/static/fumou-center-template/setting.png" mode=""></image>
 				</view>
-				<view class="base" v-if="hasBoundHouse === false && hasLogin === true">
+				<!-- <view class="base" v-if="hasBoundHouse === false && hasLogin === true">
 					<view class="profily_header" :style="'background-image: url('+ defaultImg +')'"></view>
 					<view>
 						<view @click="getNav('bound-house')"><text>请绑定房产</text></view>
 					</view>
 					<image @click="logout" src="/static/fumou-center-template/setting.png" mode=""></image>
-				</view>
-				<view class="base" v-if="hasLogin === false">
+				</view> -->
+				<!-- <view class="base" v-if="hasLogin === false">
+					<view class="profily_header" :style="'background-image: url('+ defaultImg +')'"></view>
+					<view>
+						<view @click="getNav('login')"><text>请登录</text></view>
+					</view>
+				</view> -->
+				<view class="base" v-if="!userInfo">
 					<view class="profily_header" :style="'background-image: url('+ defaultImg +')'"></view>
 					<view>
 						<view @click="getNav('login')"><text>请登录</text></view>
@@ -57,6 +64,7 @@
 export default {
 	data() {
 		return {
+			userInfo: {},
 			defaultImg:'/static/logo.png',
 			status: [
 				{
@@ -110,8 +118,18 @@ export default {
 			ownerInfo: ''
 		};
 	},
+	watch: {
+		userInfo(val) {
+			console.log(val,"监听方法");
+			this.setUserInfo();
+		}
+	},
 	onShow() {
 		// this.getData();
+		this.setUserInfo();
+	},
+	onLoad() {
+		this.setUserInfo();
 	},
 	methods: {
 		getData() {
@@ -125,6 +143,8 @@ export default {
 					if (res.confirm) {
 						setTimeout(() => {
 							this.$store.commit('logout');
+							uni.clearStorage();
+							this.userInfo = {};
 							// this.$Router.replaceAll({name:'login'})
 						}, 100);
 					}
@@ -142,22 +162,12 @@ export default {
 			uni.navigateTo({
 				url: '../login/login'
 			})
+		},
+		setUserInfo() {
+			this.userInfo = uni.getStorageSync('uid');
 		}
 	},
 	computed: {
-		userInfo() {
-			let userInfo = {};
-			uni.setStorage({
-				'userInfo' : 'mry'
-			})
-			try {
-				userInfo = uni.getStorageSync('userInfo');
-				return userInfo;
-			} catch (e) {
-				// error
-			}
-			return userInfo;
-		},
 		myHouse() {
 			return this.$store.state.myHouse;
 		},

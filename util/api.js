@@ -15,6 +15,7 @@ function getWeixinCode() {
 		uni.login({
 			provider: 'weixin',
 			success(res) {
+				console.log('res', res);
 				resolve(res.code)
 			},
 			fail(err) {
@@ -53,10 +54,10 @@ export const loginByWeixin = () => {
 				}
 			})
 		}).then((res) => {
-			uni.showModal({
-				showCancel: false,
-				content: JSON.stringify(res.result)
-			})
+			// uni.showModal({
+			// 	showCancel: false,
+			// 	content: JSON.stringify(res.result)
+			// })
 			if (res.result.code === 0) {
 				uni.setStorageSync('uni_id_token', res.result.token)
 				uni.setStorageSync('uni_id_token_expired', res.result.tokenExpired)

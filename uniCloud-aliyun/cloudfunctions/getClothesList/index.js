@@ -5,10 +5,12 @@ const collection = db.collection('TY_CLOTHES')
 
 exports.main = async (event, context) => {
 	
-	const res = await collection
-		.skip((parseInt(event.pageindex) - 1) * 10)
-		.limit(10)
-		.get();
+	// const res = await collection
+	// 	.skip((parseInt(event.pageindex) - 1) * 10)
+	// 	.limit(10)
+	// 	.get();
+	
+	const res = await collection.get();
 	
 	return res;
 	

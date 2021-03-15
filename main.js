@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App'
-import { myRequest, baseUrl, loginByWeixin } from './util/api.js'
+import { myRequest, baseUrl, loginByWeixin, getWeixinCode } from './util/api.js'
 import uitls from './common/js/common.js'
 import store from './store'
 
@@ -10,6 +10,7 @@ Vue.prototype.$myRequest = myRequest
 // 问资源获取url
 Vue.prototype.$baseUrl = baseUrl
 Vue.prototype.$login = loginByWeixin
+Vue.prototype.$WXCode = getWeixinCode
 Vue.prototype.$uitls = uitls
 Vue.prototype.$store = store
 

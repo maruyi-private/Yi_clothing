@@ -19,6 +19,7 @@ _vue.default.prototype.$myRequest = _api.myRequest;
 // 问资源获取url
 _vue.default.prototype.$baseUrl = _api.baseUrl;
 _vue.default.prototype.$login = _api.loginByWeixin;
+_vue.default.prototype.$WXCode = _api.getWeixinCode;
 _vue.default.prototype.$uitls = _common.default;
 _vue.default.prototype.$store = _store.default;
 

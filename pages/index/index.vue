@@ -66,8 +66,7 @@
 			},
 			async getHotGoods() {
 				uniCloud.callFunction({
-					name: 'getClothesList',
-					data: {pageindex: 1}
+					name: 'getClothesList'
 				}).then(res => {
 					this.goods = res.result.data
 					console.log('res2', res);

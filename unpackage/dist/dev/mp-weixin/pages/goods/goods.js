@@ -177,7 +177,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     getGoodsList: function getGoodsList(callBack) {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
                   uniCloud.callFunction({
-                    name: 'getClothesList',
+                    name: 'getCurrentUserClothes',
                     data: { pageindex: _this.pageindex } }));case 2:res = _context.sent;
 
                 _this.goods = [].concat(_toConsumableArray(_this.goods), _toConsumableArray(res.result.data));

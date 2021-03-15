@@ -48,6 +48,16 @@
 		methods: {
 			async onclickLogin() {
 				const res = await this.$login();
+				if (res.success) {
+					uniCloud.callFunction({
+						name: 'getCurrentUserInfo',
+						data: { uniIdToken: res.result.token }
+					}).then(res => {
+						console.log('loginInfo', res);
+						uni.setStorageSync('uid', res.result.uid);
+						uni.navigateBack({});
+					})
+				}
 			},
 			getCode() {
 				if (!this.$uitls.isPhone(this.tel)) {

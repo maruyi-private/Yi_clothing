@@ -221,8 +221,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     getHotGoods: function getHotGoods() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
                 uniCloud.callFunction({
-                  name: 'getClothesList',
-                  data: { pageindex: 1 } }).
+                  name: 'getClothesList' }).
                 then(function (res) {
                   _this2.goods = res.result.data;
                   console.log('res2', res);
