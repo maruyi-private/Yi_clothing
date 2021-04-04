@@ -14,7 +14,7 @@ page {
 }
 .center_top {
 	height: 18%;
-	background: url('/static/logo.png') no-repeat 0% 50%;
+	background: url('/static/img/OIP.jpg') no-repeat 0% 50%;
 	background-size: cover;
 }
 

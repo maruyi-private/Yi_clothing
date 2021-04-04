@@ -189,9 +189,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 var _default =
 {
   data: function data() {
@@ -200,49 +197,49 @@ var _default =
       defaultImg: '/static/logo.png',
       status: [
       {
-        name: '我的订单',
+        name: '待发货',
         icon: '/static/fumou-center-template/one.png',
         url: 'order' },
 
       {
-        name: '报事工单',
+        name: '待收货',
         icon: '/static/fumou-center-template/2.png',
         url: 'repair-order' },
 
       {
-        name: '发票下载',
+        name: '待评价',
         icon: '/static/fumou-center-template/3.png',
         url: 'electronic_invoice' },
 
       {
-        name: '我的余额',
+        name: '所有订单',
         icon: '/static/fumou-center-template/4.png',
         url: 'charge-money' }],
 
 
       menus: [
       {
-        name: '我的房产',
+        name: '待开发',
         icon: '/static/fumou-center-template/5.png',
         url: 'my-house' },
 
       {
-        name: '我的车辆',
+        name: '待开发',
         icon: '/static/fumou-center-template/6.png',
         url: 'my-car' },
 
       {
-        name: '报事工单',
+        name: '待开发',
         icon: '/static/fumou-center-template/8.png',
         url: 'repair-order' },
 
       {
-        name: '联系物业',
+        name: '待开发',
         icon: '/static/fumou-center-template/10.png',
         url: 'call' },
 
       {
-        name: '关于我们',
+        name: '待开发',
         icon: '/static/fumou-center-template/10.png',
         url: 'about' }],
 
