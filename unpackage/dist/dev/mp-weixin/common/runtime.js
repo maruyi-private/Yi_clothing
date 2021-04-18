@@ -105,11 +105,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"components/goods-list/goods-list":1,"components/news-item/news-item":1};
+/******/ 		var cssChunks = {"components/goods-list/goods-list":1,"components/news-item/news-item":1,"pages/info/physiological":1,"uni_modules/uni-steps/components/uni-steps/uni-steps":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/goods-list/goods-list":"components/goods-list/goods-list","components/news-item/news-item":"components/news-item/news-item"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"components/goods-list/goods-list":"components/goods-list/goods-list","components/news-item/news-item":"components/news-item/news-item","pages/info/face":"pages/info/face","pages/info/hobbies":"pages/info/hobbies","pages/info/others":"pages/info/others","pages/info/physiological":"pages/info/physiological","uni_modules/uni-steps/components/uni-steps/uni-steps":"uni_modules/uni-steps/components/uni-steps/uni-steps"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

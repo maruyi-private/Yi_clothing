@@ -11,9 +11,11 @@
 	line-height: 80rpx;
 	font-size: 28rpx;
 	width: 240rpx;
-	border-radius: 8rpx;
+	-webkit-border-radius: 8rpx;
+	        border-radius: 8rpx;
 	text-align: center;
 	color: #ffffff;
+	background: -webkit-gradient(linear, left top, right top, from(#ff978d), to(#ffbb69));
 	background: -webkit-linear-gradient(left, #ff978d, #ffbb69);
 	background: linear-gradient(left, #ff978d, #ffbb69);
 }
@@ -22,7 +24,8 @@
 	line-height: 80rpx;
 	font-size: 28rpx;
 	width: 240rpx;
-	border-radius: 8rpx;
+	-webkit-border-radius: 8rpx;
+	        border-radius: 8rpx;
 	text-align: center;
 	color: #ffffff;
 	background: #898989;
@@ -34,8 +37,10 @@
 .landing {
 	height: 84rpx;
 	line-height: 84rpx;
-	border-radius: 44rpx;
+	-webkit-border-radius: 44rpx;
+	        border-radius: 44rpx;
 	font-size: 32rpx;
+	background: -webkit-gradient(linear, left top, right top, from(#ff978d), to(#ffbb69));
 	background: -webkit-linear-gradient(left, #ff978d, #ffbb69);
 	background: linear-gradient(left, #ff978d, #ffbb69);
 }
@@ -49,7 +54,8 @@
 	padding: 10rpx 25rpx;
 	height: 82rpx;
 	line-height: 68rpx;
-	border-radius: 2.5rem;
+	-webkit-border-radius: 2.5rem;
+	        border-radius: 2.5rem;
 }
 .forget-margin-b {
 	margin-bottom: 25rpx;
@@ -60,9 +66,11 @@
 }
 .forget-card {
 	background: #fff;
-	border-radius: 12rpx;
+	-webkit-border-radius: 12rpx;
+	        border-radius: 12rpx;
 	padding: 60rpx 25rpx;
-	box-shadow: 0 6rpx 18rpx rgba(0, 0, 0, 0.12);
+	-webkit-box-shadow: 0 6rpx 18rpx rgba(0, 0, 0, 0.12);
+	        box-shadow: 0 6rpx 18rpx rgba(0, 0, 0, 0.12);
 	position: relative;
 	margin-top: 60rpx;
 }
@@ -107,7 +115,8 @@
 	width: 100rpx;
 	height: 100rpx;
 	border: 1rpx solid #dddddd;
-	border-radius: 100rpx;
+	-webkit-border-radius: 100rpx;
+	        border-radius: 100rpx;
 	margin: 0 40rpx;
 	background-color: #ffffff;
 }

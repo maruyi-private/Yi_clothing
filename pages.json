@@ -75,6 +75,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/info/info",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "信息完善",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",

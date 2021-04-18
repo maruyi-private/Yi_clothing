@@ -9,7 +9,8 @@
     "pages/pics/pics",
     "pages/videos/videos",
     "pages/news-detail/news-detail",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/info/info"
   ],
   "subPackages": [],
   "window": {
@@ -48,6 +49,5 @@
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap44.json"
+  "usingComponents": {}
 }

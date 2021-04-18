@@ -45,7 +45,8 @@
   width: 120rpx;
   height: 120rpx;
   background-color: #b50e03;
-  border-radius: 60rpx;
+  -webkit-border-radius: 60rpx;
+          border-radius: 60rpx;
   margin-left: 33.75rpx;
   margin-top: 20rpx;
   line-height: 120rpx;

@@ -30,10 +30,16 @@
 					icon: "iconfont icon-ziyuan",
 					title: "量身定制",
 					path: "/pages/goods/goods"
-				},{
+				},
+				// {
+				// 	icon: "iconfont icon-tupian",
+				// 	title: "信息完善",
+				// 	path: "/pages/pics/pics"
+				// },
+				{
 					icon: "iconfont icon-tupian",
 					title: "信息完善",
-					path: "/pages/pics/pics"
+					path: "/pages/info/info"
 				},{
 					icon: "iconfont icon-shipin",
 					title: "学习视频",
