@@ -1,5 +1,6 @@
 <template>
 	<view class="goods_list">
+		<uni-search-bar @confirm="search" v-model="searchValue" :radius="100"></uni-search-bar>
 		<goods-list :goods="goods"></goods-list>
 		<view class="isOver" v-if="flag">-----我是有底线的-----</view>
 	</view>
@@ -13,13 +14,32 @@
 			return {
 				pageindex: 1,
 				goods: [],
-				flag: false
+				flag: false,
+				searchValue: '',
+				onsearch: false
 			}
 		},
 		onLoad() {
 			this.getGoodsList();
 		},
 		methods: {
+			search() {
+				this.pageindex = 1;
+				this.goods = [];
+				this.onsearch = true;
+				this.getGoodsListBySearch();
+			},
+			async getGoodsListBySearch(callBack) {
+				const userBasicInfo = uni.getStorageSync('userBasicInfo');
+				const res = await uniCloud.callFunction({
+					name: 'getGoodsListBySearch',
+					data: {pageindex: this.pageindex, ...userBasicInfo, searchValue: this.searchValue},
+					success: (res) => {
+						this.goods = [...this.goods, ...res.result.data]
+						callBack && callBack();
+					}
+				})
+			},
 			async getGoodsList(callBack) {
 				const res = await uniCloud.callFunction({
 					name: 'getCurrentUserClothes',
@@ -38,16 +58,26 @@
 				return this.flag = true;
 			}
 			this.pageindex++;
-			this.getGoodsList();
+			if(this.onsearch) {
+				this.getGoodsListBySearch();
+			} else {
+				this.getGoodsList();
+			}
 		},
 		onPullDownRefresh() {
 			this.pageindex = 1;
 			this.goods = [];
 			this.flag = false;
 			setTimeout(() => {
-				this.getGoodsList(() => {
-					uni.stopPullDownRefresh();
-				});
+				if(this.onsearch) {
+					this.getGoodsListBySearch(() => {
+						uni.stopPullDownRefresh();
+					});
+				} else {
+					this.getGoodsList(() => {
+						uni.stopPullDownRefresh();
+					});
+				}
 			}, 1000);
 		}
 	}

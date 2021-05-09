@@ -209,16 +209,14 @@
 .uni-steps__row-circle.data-v-1ec1e3f6 {
   width: 5px;
   height: 5px;
-  -webkit-border-radius: 100px;
-          border-radius: 100px;
+  border-radius: 100px;
   background-color: #999;
   margin: 0px 3px;
 }
 .uni-steps__column-circle.data-v-1ec1e3f6 {
   width: 5px;
   height: 5px;
-  -webkit-border-radius: 100px;
-          border-radius: 100px;
+  border-radius: 100px;
   background-color: #999;
   margin: 4px 0px 5px 0px;
 }

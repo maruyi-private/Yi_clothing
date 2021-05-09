@@ -47,7 +47,11 @@
 		},
 		methods: {
 			async onclickLogin() {
+				uni.showLoading({
+					title: '登录中'
+				});
 				const res = await this.$login();
+				
 				if (res.success) {
 					uniCloud.callFunction({
 						name: 'getCurrentUserInfo',
@@ -56,6 +60,7 @@
 						console.log('loginInfo', res);
 						uni.setStorageSync('uid', res.result.uid);
 						uni.navigateBack({});
+						uni.hideLoading();
 					})
 				}
 			},

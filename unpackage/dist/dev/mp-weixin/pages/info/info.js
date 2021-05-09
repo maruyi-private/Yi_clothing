@@ -17,7 +17,7 @@ var components
 try {
   components = {
     uniSteps: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-steps/components/uni-steps/uni-steps */ "uni_modules/uni-steps/components/uni-steps/uni-steps").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-steps/components/uni-steps/uni-steps.vue */ 150))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-steps/components/uni-steps/uni-steps */ "uni_modules/uni-steps/components/uni-steps/uni-steps").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-steps/components/uni-steps/uni-steps.vue */ 124))
     }
   }
 } catch (e) {
@@ -74,7 +74,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uniCloud, uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var physiological = function physiological() {__webpack_require__.e(/*! require.ensure | pages/info/physiological */ "pages/info/physiological").then((function () {return resolve(__webpack_require__(/*! ./physiological.vue */ 124));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var face = function face() {__webpack_require__.e(/*! require.ensure | pages/info/face */ "pages/info/face").then((function () {return resolve(__webpack_require__(/*! ./face.vue */ 131));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var hobbies = function hobbies() {__webpack_require__.e(/*! require.ensure | pages/info/hobbies */ "pages/info/hobbies").then((function () {return resolve(__webpack_require__(/*! ./hobbies.vue */ 136));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var others = function others() {__webpack_require__.e(/*! require.ensure | pages/info/others */ "pages/info/others").then((function () {return resolve(__webpack_require__(/*! ./others.vue */ 141));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni, uniCloud) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 15));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var physiological = function physiological() {__webpack_require__.e(/*! require.ensure | pages/info/physiological */ "pages/info/physiological").then((function () {return resolve(__webpack_require__(/*! ./physiological.vue */ 131));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var face = function face() {__webpack_require__.e(/*! require.ensure | pages/info/face */ "pages/info/face").then((function () {return resolve(__webpack_require__(/*! ./face.vue */ 138));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var hobbies = function hobbies() {__webpack_require__.e(/*! require.ensure | pages/info/hobbies */ "pages/info/hobbies").then((function () {return resolve(__webpack_require__(/*! ./hobbies.vue */ 145));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var others = function others() {__webpack_require__.e(/*! require.ensure | pages/info/others */ "pages/info/others").then((function () {return resolve(__webpack_require__(/*! ./others.vue */ 152));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
@@ -99,21 +99,65 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       option: [{ title: '生理信息' }, { title: '面容信息' }, { title: '兴趣爱好' }, { title: '补充信息' }],
-      stept: 0 };
+      stept: 0,
+      userinfo: {} };
 
   },
+  watch: {
+    userinfo: function userinfo(val) {
+      console.log(val, "监听方法");
+      this.userinfo = val;
+    } },
+
+  onLoad: function onLoad() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
+              // uni.showLoading({
+              //     title: '加载中'
+              // });
+
+              // const res = await uniCloud.callFunction({
+              // 	name: 'getCurrentUserBasicUserInfo',
+              // 	data: { suserid: uni.getStorageSync('uid') }
+              // });
+
+              // this.userinfo = res.result.data[0];
+
+              // uni.hideLoading();
+
+              _this.userinfo = uni.getStorageSync("userBasicInfo");case 1:case "end":return _context.stop();}}}, _callee);}))();
+  },
   methods: {
-    phySubmit: function phySubmit(formdata) {var _this = this;
+    phySubmit: function phySubmit(formdata) {var _this2 = this;
       console.log("formdata", formdata);
       uniCloud.callFunction({
         name: 'submitPhysiological',
-        data: { phyData: formdata },
-        success: function success() {
-          _this.stept++;
+        data: { phyData: formdata, suserid: uni.getStorageSync('uid') },
+        success: function success(res) {
+          console.log('res', res);
+          _this2.stept++;
+          // uni.showToast({
+          // 	icon: 'success',
+          // 	title: '保存成功！'
+          // })
+        },
+        fail: function fail(res) {
+          console.log('res', res);
           uni.showToast({
-            icon: 'success',
-            title: '保存成功！' });
+            icon: 'none',
+            title: '保存失败！' });
 
+        } });
+
+    },
+    faceSubmit: function faceSubmit(formdata) {var _this3 = this;
+      uniCloud.callFunction({
+        name: 'submitFace',
+        data: { faceData: formdata, suserid: uni.getStorageSync('uid') },
+        success: function success() {
+          _this3.stept++;
+          // uni.showToast({
+          // 	icon: 'success',
+          // 	title: '保存成功！'
+          // })
         },
         fail: function fail() {
           uni.showToast({
@@ -123,16 +167,56 @@ __webpack_require__.r(__webpack_exports__);
         } });
 
     },
-    faceSubmit: function faceSubmit() {
-      console.log("1");
+    hobbiesSubmit: function hobbiesSubmit(formdata) {var _this4 = this;
+      uniCloud.callFunction({
+        name: 'submitHobbies',
+        data: { hobbiesData: formdata, suserid: uni.getStorageSync('uid') },
+        success: function success() {
+          _this4.stept++;
+          // uni.showToast({
+          // 	icon: 'success',
+          // 	title: '保存成功！'
+          // })
+        },
+        fail: function fail() {
+          uni.showToast({
+            icon: 'none',
+            title: '保存失败！' });
+
+        } });
+
     },
-    hobbiesSubmit: function hobbiesSubmit() {
-      console.log("2");
-    },
-    othersSubmit: function othersSubmit() {
-      console.log('3');
+    othersSubmit: function othersSubmit(formdata) {
+      uniCloud.callFunction({
+        name: 'submitOthers',
+        data: { otherData: formdata, suserid: uni.getStorageSync('uid') },
+        success: function success() {
+          // this.stept++
+          uni.showToast({
+            icon: 'success',
+            title: '保存成功！' });
+
+
+          setTimeout(function () {
+            uni.navigateBack({
+              delta: 1 });
+
+          }, 2000);
+        },
+        fail: function fail() {
+          uni.showToast({
+            icon: 'none',
+            title: '保存失败！' });
+
+        } });
+
+    } },
+
+  computed: {
+    phyData: function phyData() {var _this5 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:return _context2.abrupt("return",
+                _this5.userinfo.phyData);case 1:case "end":return _context2.stop();}}}, _callee2);}))();
     } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js */ 12)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js */ 12)["default"]))
 
 /***/ }),
 

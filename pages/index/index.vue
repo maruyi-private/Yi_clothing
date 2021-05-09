@@ -56,6 +56,7 @@
 		onLoad() {
 			this.getSwipers();
 			this.getHotGoods();
+			this.getUserBasicInfo();
 		},
 		methods: {
 			// 获取轮播图
@@ -87,6 +88,18 @@
 				uni.navigateTo({
 					url
 				});
+			},
+			async getUserBasicInfo() {
+				const suserid = uni.getStorageSync('uid');
+				if(suserid != null) {
+					uniCloud.callFunction({
+						name: 'getCurrentUserBasicUserInfo',
+						data: { suserid },
+						success: (res) => {
+							uni.setStorageSync('userBasicInfo', res.result.data[0])
+						}
+					})
+				}
 			}
 		}
 	}

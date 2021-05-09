@@ -211,6 +211,7 @@ __webpack_require__.r(__webpack_exports__);
   onLoad: function onLoad() {
     this.getSwipers();
     this.getHotGoods();
+    this.getUserBasicInfo();
   },
   methods: {
     // 获取轮播图
@@ -242,6 +243,18 @@ __webpack_require__.r(__webpack_exports__);
       uni.navigateTo({
         url: url });
 
+    },
+    getUserBasicInfo: function getUserBasicInfo() {return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {var suserid;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:
+                suserid = uni.getStorageSync('uid');
+                if (suserid != null) {
+                  uniCloud.callFunction({
+                    name: 'getCurrentUserBasicUserInfo',
+                    data: { suserid: suserid },
+                    success: function success(res) {
+                      uni.setStorageSync('userBasicInfo', res.result.data[0]);
+                    } });
+
+                }case 2:case "end":return _context3.stop();}}}, _callee3);}))();
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/uni-cloud/dist/index.js */ 12)["default"], __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

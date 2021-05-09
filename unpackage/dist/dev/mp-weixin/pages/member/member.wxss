@@ -7,8 +7,7 @@ page {
 }
 .profily,
 .profily_header {
-	-webkit-border-radius: 8px;
-	        border-radius: 8px;
+	border-radius: 8px;
 }
 .center {
 	height: 100%;
@@ -35,10 +34,8 @@ page {
 	left: 5%;
 	background: #fefefe;
 	padding: 35rpx;
-	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
-	-webkit-box-shadow: 0px 2px 5px #ededed;
-	        box-shadow: 0px 2px 5px #ededed;
+	box-sizing: border-box;
+	box-shadow: 0px 2px 5px #ededed;
 }
 .base {
 	display: -webkit-box;
@@ -109,8 +106,7 @@ page {
 	padding: 14px 5%;
 	background: #fefefe;
 	overflow: hidden;
-	-webkit-box-sizing: border-box;
-	        box-sizing: border-box;
+	box-sizing: border-box;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: flex;
