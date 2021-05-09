@@ -98,6 +98,25 @@
                         "s180": 20,
                         "amount": 100
                     }
+                },
+                "sellInfo": {
+                    "sex": "man",
+                    "status": [
+                        "0",
+                        "1"
+                    ],
+                    "age": 20,
+                    "height": 180,
+                    "weight": 80,
+                    "faceShape": "3",
+                    "skinColor": "1",
+                    "eyeShape": "1",
+                    "hobbies": [
+                        "0",
+                        "1",
+                        "2"
+                    ],
+                    "nature": "1"
                 }
             },
             {
@@ -692,6 +711,25 @@
                         "s180": 20,
                         "amount": 100
                     }
+                },
+                "sellInfo": {
+                    "sex": "man",
+                    "status": [
+                        "0",
+                        "1"
+                    ],
+                    "age": 20,
+                    "height": 180,
+                    "weight": 80,
+                    "faceShape": "3",
+                    "skinColor": "1",
+                    "eyeShape": "1",
+                    "hobbies": [
+                        "0",
+                        "1",
+                        "2"
+                    ],
+                    "nature": "1"
                 }
             },
             {
@@ -1025,6 +1063,55 @@
             }
         ]
     },
+    "TY_USERINFO": {
+        "data": [
+            {
+                "_id": {
+                    "$oid": "60968b04f2e56f00015c6f37"
+                },
+                "phyData": {
+                    "name": "马如意",
+                    "sex": "man",
+                    "status": [
+                        "0"
+                    ],
+                    "age": 20,
+                    "height": 180,
+                    "weight": 80
+                },
+                "suserid": {
+                    "$oid": "6020a02020be4e0001cb51fd"
+                },
+                "uniIdToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDIwYTAyMDIwYmU0ZTAwMDFjYjUxZmQiLCJyb2xlIjpbXSwicGVybWlzc2lvbiI6W10sImNsaWVudElkIjoiNTczNWYyMzAyNzhlYzNlNjhlZmQ5NGNhNzI4YTI1NDUiLCJpYXQiOjE2MjA0NzQyNjQsImV4cCI6MTYyMDQ4MTQ2NH0.dqqTzXwKd1agVJ14UKB5snQpOeHFTB00g4O9geESeKk",
+                "faceData": {
+                    "eyeShape": "1",
+                    "faceShape": "3",
+                    "skinColor": "1"
+                },
+                "hobbiesData": {
+                    "hobbies": "1"
+                },
+                "otherData": {
+                    "nature": "1"
+                }
+            }
+        ],
+        "schema": {
+            "bsonType": "object",
+            "required": [],
+            "permission": {
+                "read": false,
+                "create": false,
+                "update": false,
+                "delete": false
+            },
+            "properties": {
+                "_id": {
+                    "description": "ID，系统自动生成"
+                }
+            }
+        }
+    },
     "opendb-verify-codes": {
         "data": []
     },
@@ -1037,10 +1124,12 @@
                 "register_date": 1612750880905,
                 "register_ip": "116.235.189.136",
                 "token": [
-                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDIwYTAyMDIwYmU0ZTAwMDFjYjUxZmQiLCJyb2xlIjpbXSwicGVybWlzc2lvbiI6W10sImNsaWVudElkIjoiNTczNWYyMzAyNzhlYzNlNjhlZmQ5NGNhNzI4YTI1NDUiLCJpYXQiOjE2MTYxMzIyNTUsImV4cCI6MTYxNjEzOTQ1NX0.pSxuFrcDFzWF-ZHjclj2TIJ6m-kkxmL8g60zV6hY8As"
+                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDIwYTAyMDIwYmU0ZTAwMDFjYjUxZmQiLCJyb2xlIjpbXSwicGVybWlzc2lvbiI6W10sImNsaWVudElkIjoiNTczNWYyMzAyNzhlYzNlNjhlZmQ5NGNhNzI4YTI1NDUiLCJpYXQiOjE2MjA1NDYyNDUsImV4cCI6MTYyMDU1MzQ0NX0.wykpPmYlb43Qi7xnuEMTzV6VEn7hv6S9UiEKU2xsjTQ",
+                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDIwYTAyMDIwYmU0ZTAwMDFjYjUxZmQiLCJyb2xlIjpbXSwicGVybWlzc2lvbiI6W10sImNsaWVudElkIjoiNTczNWYyMzAyNzhlYzNlNjhlZmQ5NGNhNzI4YTI1NDUiLCJpYXQiOjE2MjA1NDY1MTEsImV4cCI6MTYyMDU1MzcxMX0.ClZNjTTcUBnT94m_-KFVTy0ZeC5Wi-A9QkBoei-pdsk",
+                    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MDIwYTAyMDIwYmU0ZTAwMDFjYjUxZmQiLCJyb2xlIjpbXSwicGVybWlzc2lvbiI6W10sImNsaWVudElkIjoiNTczNWYyMzAyNzhlYzNlNjhlZmQ5NGNhNzI4YTI1NDUiLCJpYXQiOjE2MjA1NDY1NDUsImV4cCI6MTYyMDU1Mzc0NX0.TF8TQe_8tzTjYLb3hcnKPjQfpO1JbwmnVASGanHPS2I"
                 ],
-                "last_login_date": 1616132255523,
-                "last_login_ip": "101.93.29.63",
+                "last_login_date": 1620546545368,
+                "last_login_ip": "120.242.194.69",
                 "wx_openid": {
                     "mp-weixin": "oJS3Q4toJI_9Lj85KUDUVoU068y0"
                 }
